@@ -17,6 +17,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.customerService.customerService.security.services.UserDetailsServiceImpl;
 
+//OncePerRequestFilter makes a single execution for each request to our API. 
+
+//It provides a doFilterInternal() method that we will implement parsing & validating JWT, 
+//loading User details (using UserDetailsService), checking Authorizaion (using UsernamePasswordAuthenticationToken).
+
 public class AuthTokenFilter extends OncePerRequestFilter{
 	
 	@Autowired

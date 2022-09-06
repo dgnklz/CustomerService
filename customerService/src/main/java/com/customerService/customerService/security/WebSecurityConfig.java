@@ -18,12 +18,13 @@ import com.customerService.customerService.security.jwt.AuthEntryPointJwt;
 import com.customerService.customerService.security.jwt.AuthTokenFilter;
 import com.customerService.customerService.security.services.UserDetailsServiceImpl;
 
+//WebSecurityConfigurerAdapter is the crux of our security implementation. 
+//It provides HttpSecurity configurations to configure cors, csrf, session management, rules for protected resources. 
+//We can also extend and customize the default configuration that contains the elements below.
+
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(
-		// securedEnabled = true,
-		// jsr250Enabled = true,
-		prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 

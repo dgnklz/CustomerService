@@ -10,6 +10,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.customerService.customerService.dataAccess.abstracts.UserDao;
 import com.customerService.customerService.entities.concretes.User;
 
+
+//UserDetailsService interface has a method to load User by username
+//and returns a UserDetails object that Spring Security can use for authentication and validation.
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	@Autowired
