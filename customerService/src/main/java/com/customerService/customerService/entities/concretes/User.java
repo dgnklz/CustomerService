@@ -16,11 +16,13 @@ import javax.persistence.UniqueConstraint;
 
 import com.customerService.customerService.entities.abstracts.IEntity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="users", uniqueConstraints = {@UniqueConstraint(columnNames = "username"),@UniqueConstraint(columnNames = "email")})
-@Data
+@Getter
+@Setter
 public class User implements IEntity{
 	
 	@Id
