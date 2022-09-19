@@ -20,10 +20,10 @@ import com.customerService.customerService.security.services.UserDetailsServiceI
 //OncePerRequestFilter makes a single execution for each request to our API. 
 
 //It provides a doFilterInternal() method that we will implement parsing & validating JWT, 
-//loading User details (using UserDetailsService), checking Authorizaion (using UsernamePasswordAuthenticationToken).
+//loading User details (using UserDetailsService), checking Authorization (using UsernamePasswordAuthenticationToken).
 
 public class AuthTokenFilter extends OncePerRequestFilter{
-	
+
 	@Autowired
 	private JwtUtils jwtUtils;
 	

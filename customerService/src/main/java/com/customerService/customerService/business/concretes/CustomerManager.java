@@ -33,23 +33,47 @@ public class CustomerManager implements CustomerService{
 		this.customerCriteriaRepository = customerCriteriaRepository;
 	}
 
+//Without external service methods that return error message
 	@Override
-	public DataResult<List<Customer>> getAllCustomers() {
+	public List<Customer> getAllCustomers() {
+		return customerDao.findAll();
+	}
+	
+	@Override
+	public Page<Customer> getCustomersWithSort1(CustomerPage customerPage,
+			CustomerSearchCriteria customerSearchCriteria) {
+		return customerCriteriaRepository.findAllWithFilters(customerPage, customerSearchCriteria);
+	}
+	
+	@Override
+	public Customer getOneCustomer(Long customerId) {
+		return customerDao.findById(customerId).orElse(null);
+	}
+
+	@Override
+	public Customer saveOneCustomer(Customer newCustomer) {
+		return customerDao.save(newCustomer);
+	}
+
+	@Override
+	public void deleteOneCustomer(Long customerId) {
+		customerDao.deleteById(customerId);
+	}
+	
+	
+	
+//With external service methods that return error message
+	@Override
+	public DataResult<List<Customer>> getAllCustomers1() {
 		if(new SuccessDataResult<List<Customer>>(true, customerDao.findAll()).isSuccess()) {
 			return new SuccessDataResult<List<Customer>>(true, customerDao.findAll());
 		}else {
 			return new ErrorDataResult<List<Customer>>(false, "There is no any customer in the system yet");
 		}
 	}
-	
-	@Override
-	public Page<Customer> getCustomersWithSort(CustomerPage customerPage,
-			CustomerSearchCriteria customerSearchCriteria) {
-		return customerCriteriaRepository.findAllWithFilters(customerPage, customerSearchCriteria);
-	}
 
 	@Override
-	public DataResult<Customer> getOneCustomer(Long customerId) {
+	public DataResult<Customer> getOneCustomer1(Long customerId) {
 		Optional<Customer> customer = customerDao.findById(customerId);
 		if(customer.isPresent()) {
 			return new SuccessDataResult<Customer>(true, customer.get());
@@ -60,7 +84,7 @@ public class CustomerManager implements CustomerService{
 	}
 
 	@Override
-	public Result deleteById(Long customerId) {
+	public Result deleteOneCustomer1(Long customerId) {
 		Optional<Customer> customer = customerDao.findById(customerId);
 		if(customer.isPresent()) {
 			customerDao.deleteById(customerId);
@@ -72,7 +96,7 @@ public class CustomerManager implements CustomerService{
 	}
 
 	@Override
-	public Result saveOneCustomer(Customer customer) {
+	public Result saveOneCustomer1(Customer customer) {
 		if(customer.getCustomerName().isEmpty() || customer.getCustomerLastName().isEmpty()) {
 			return new ErrorResult(false, "The customer could not be added");
 		}
