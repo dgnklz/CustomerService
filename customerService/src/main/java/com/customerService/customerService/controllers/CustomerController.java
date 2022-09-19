@@ -48,7 +48,6 @@ public class CustomerController {
 		log.debug("[getAllCustomers] debug message");
 		logger.trace("[getAllCustomers] trace message");
 		return customerService.getAllCustomers();
-		
 	}
 	
 	@GetMapping("/pagination")
