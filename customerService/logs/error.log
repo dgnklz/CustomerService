@@ -1,0 +1,75 @@
+2022-09-18 23:44:41,195 ERROR LoggingFailureAnalysisReporter:40 - [] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-18 23:45:38,300 ERROR LoggingFailureAnalysisReporter:40 - [] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-18 23:46:57,503 ERROR LoggingFailureAnalysisReporter:40 - [] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-18 23:47:22,370 ERROR LoggingFailureAnalysisReporter:40 - [] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-18 23:47:52,472 ERROR LoggingFailureAnalysisReporter:40 - [] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-18 23:54:22,986 ERROR AuthEntryPointJwt:24 - [] Unauthorized error: Full authentication is required to access this resource
+2022-09-18 23:54:44,422 ERROR AuthEntryPointJwt:24 - [] Unauthorized error: Full authentication is required to access this resource
+2022-09-18 23:56:58,205 ERROR AuthEntryPointJwt:24 - [] Unauthorized error: Full authentication is required to access this resource
+2022-09-18 23:56:59,437 ERROR AuthEntryPointJwt:24 - [] Unauthorized error: Full authentication is required to access this resource
+2022-09-18 23:57:31,090 ERROR AuthEntryPointJwt:24 - [] Unauthorized error: Full authentication is required to access this resource
